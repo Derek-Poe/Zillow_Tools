@@ -26,7 +26,7 @@ for x in photoTiles:
 #
 
 
-houses = [[]]
+houses = []
 y = 0
 for x in houseLinks:
   zillowURL = x
@@ -38,12 +38,14 @@ for x in houseLinks:
   houses.append(zillowSoup)
   
   priceContainer = houses[y].findAll("span",{"class":"ds-value"})
-  price = price[0].text
+  #print(houses[y])
+  price = priceContainer[0].text
   
-  houses[y].append(price)
-  
+  houses[y].price = price
+  #print(x)
+  print(houses[y].price)
   y += 1
-  break
+  
 
   
 #fileName = "products.csv"
