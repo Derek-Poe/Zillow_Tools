@@ -45,6 +45,7 @@ for x in houseLinks:
   #print(x)
   print(houses[y].price)
   y += 1
+  break
   
 
   
