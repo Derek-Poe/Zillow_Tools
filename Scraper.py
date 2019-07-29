@@ -20,19 +20,29 @@ for x in photoTiles:
   houseLinks.append(x.a["href"])
 
   
-#House Info
-#Price
+###House Info###
+# 0 - Address
+# 1 - Price
+#
 
 
-#price = zillowSoup.findAll("span",{"class":"ds-value"})
-#price[0].text
-  
+houses = [[]]
+y = 0
 for x in houseLinks:
   zillowURL = x
   zillowSession = zillowRequest.get(zillowURL, headers=reqHeaders)
   zillowContent = zillowSession.content
   zillowSoup = soup(zillowContent, "html.parser")
   zillowSession.close()
+  
+  houses.append(zillowSoup)
+  
+  priceContainer = houses[y].findAll("span",{"class":"ds-value"})
+  price = price[0].text
+  
+  houses[y].append(price)
+  
+  y += 1
   break
 
   
