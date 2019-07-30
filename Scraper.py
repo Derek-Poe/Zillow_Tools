@@ -21,9 +21,43 @@ for x in photoTiles:
 
   
 ###House Info###
-# 0 - Address
-# 1 - Price
-#
+# - address
+# - price
+# - bed
+# - bath
+# - fullBath
+# - halfBath
+# - sqft
+# - zestimate
+# - timeOnZillow
+# - views
+# - saves
+# - type
+# - yearBuilt
+# - heating
+# - cooling
+# - parking
+# - lot
+# - priceSqft
+# - flooring
+# - appliances
+# - stories
+# - exterior
+# - parcelNumber
+# - zoning
+# - roof
+# - newConstruction
+# - sunScore
+# - region
+# - hasHOAFee
+# - taxAssessedValue
+# - annualTaxAmount
+# - MLSID
+# - school
+# - priceHistory
+# - taxHistory
+# - rentZestimate
+# - propertyOwner
 
 
 houses = []
@@ -45,7 +79,6 @@ for x in houseLinks:
   #print(x)
   print(houses[y].price)
   y += 1
-  break
   
 
   
