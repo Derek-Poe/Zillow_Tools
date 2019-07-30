@@ -20,13 +20,13 @@ for x in photoTiles:
   houseLinks.append(x.a["href"])
 
   
-###House Info###
-# - address
-# - price
-# - bed
-# - bath
-# - fullBath
-# - halfBath
+#House Info#
+# - address *
+# - price *
+# - beds
+# - baths
+# - fullBaths
+# - halfBaths
 # - sqft
 # - zestimate
 # - timeOnZillow
@@ -71,14 +71,19 @@ for x in houseLinks:
   
   houses.append(zillowSoup)
   
+  addressContainer = houses[y].findAll("h1",{"class":"ds-address-container"})[0].findAll("span")
+  address = addressContainer[0].text + addressContainer[1].text
+  houses[y].address = address
+  #
   priceContainer = houses[y].findAll("span",{"class":"ds-value"})
-  #print(houses[y])
   price = priceContainer[0].text
-  
   houses[y].price = price
-  #print(x)
+  #
+  
+  print(houses[y].address)
   print(houses[y].price)
   y += 1
+  break
   
 
   
