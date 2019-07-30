@@ -52,22 +52,22 @@ for x in photoTiles:
 # - sunscore ########
 # - region *
 # - hasHOAFee *
-# - taxAssessedValue
-# - annualTaxAmount
-# - school
-# - construction
-# - roof
-# - exterior
-# - floor
-# - walls
-# - miscellaneous
-# - style
-# - water
-# - fence
+# - taxAssessedValue *
+# - annualTaxAmount *
+# - school *
+# - construction *
+# - roof *
+# - exterior *
+# - floor *
+# - walls *
+# - miscellaneous *
+# - style *
+# - water *
+# - fence *
 # - priceHistory
 # - taxHistory
-# - rentZestimate
-# - propertyOwner
+# - rentZestimate #####################
+# - propertyOwner 
 
 
 houses = []
@@ -75,8 +75,8 @@ y = 0
 for x in houseLinks:
   print("#########################")
   #----------------------------------------------------------------------------------------------------------------
-  zillowURL = "https://www.zillow.com/homedetails/164-Kidder-Loop-Merryville-LA-70653/106012997_zpid/"
-  #zillowURL = x
+  #zillowURL = "https://www.zillow.com/homedetails/164-Kidder-Loop-Merryville-LA-70653/106012997_zpid/"
+  zillowURL = x
   #----------------------------------------------------------------------------------------------------------------
   zillowSession = zillowRequest.get(zillowURL, headers=reqHeaders)
   zillowContent = zillowSession.content
@@ -424,8 +424,8 @@ for x in houseLinks:
   print("Fence: " + houses[y].fence)
   
   print("#########################")
-  #y += 1
-  break
+  y += 1
+  #break
   
 
   
@@ -449,3 +449,15 @@ for x in houseLinks:
   #f.write(brand + "," + productName.replace(",", "|") + "," + shipping + "\n")
   
 #f.close()
+
+#for za in houses[0].findAll("span"):
+  #try:
+    #print(za.text)
+	#test = za.text
+	#if za.text = "Property Owner":
+	  #print("Success")
+	  #break
+  #except:
+    #continue
+  #if test == "Property Owner":
+    #print("Succes")
